@@ -1,0 +1,32 @@
+<?php
+
+use app\Http\Controllers\ReviewsController;
+use app\Http\Controllers\SamplesController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route ::controller(SampleController::class)->group(function () {
+    Route::get('/sample', SampleController::class)->name('index');
+
+});
+
+Route ::controller(ReviewController::class)->group(function () {
+    Route::get('/review', ReviewController::class)->name('index');
+
+});
+
+
