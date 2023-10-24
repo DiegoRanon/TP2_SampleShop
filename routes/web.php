@@ -1,7 +1,7 @@
 <?php
 
-use app\Http\Controllers\ReviewsController;
-use app\Http\Controllers\SamplesController;
+use App\Http\Controllers\SampleController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,18 +15,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/apropos', function () {
+    return view('apropos');
+}); 
 
 Route ::controller(SampleController::class)->group(function () {
-    Route::get('/sample', SampleController::class)->name('index');
+    Route::get('/', 'index');
+    Route::get('/sample/create', 'create');
+    Route::get('/sample/{id}', 'show');
+    Route::get('/sample/{id}/edit', 'edit');
+    //Route::get('/sample/apropos', 'apropos');
+
+    Route::post('/sample', 'store');
+    Route::patch('/sample/{id}', 'update');
+    Route::delete('/sample/{id}', 'destroy');
 
 });
 
-Route ::controller(ReviewController::class)->group(function () {
-    Route::get('/review', ReviewController::class)->name('index');
 
-});
 
 

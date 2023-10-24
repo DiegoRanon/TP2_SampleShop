@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Review;
@@ -10,13 +12,13 @@ class ReviewController extends Controller
     public function index()
     {
         $reviews = Review::all();
-        return view('reviews.index', compact('reviews'));
+        return view('review.index', compact('reviews'));
     }
 
     
     public function create()
     {
-        return view('reviews.create');
+        return view('review.create');
     }
 
     
@@ -40,14 +42,14 @@ class ReviewController extends Controller
     public function show($id)
     {
         $review = Review::find($id);
-        return view('reviews.show', compact('review'));
+        return view('review.show', compact('review'));
     }
 
     
     public function edit($id)
     {
         $review = Review::find($id);
-        return view('reviews.edit', compact('review'));
+        return view('review.edit', compact('review'));
     }
 
     
@@ -65,7 +67,7 @@ class ReviewController extends Controller
 
         $review->update($request->all());
 
-        return redirect()->route('reviews.index');
+        return redirect()->route('review.index');
     }
 
     
@@ -74,7 +76,7 @@ class ReviewController extends Controller
         $review = Review::find($id);
         $review->delete();
 
-        return redirect()->route('reviews.index');
+        return redirect()->route('review.index');
     }
 }
 

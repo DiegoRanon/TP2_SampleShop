@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Sample;
@@ -10,13 +12,13 @@ class SampleController extends Controller
     public function index()
     {
         $samples = Sample::all();
-        return view('samples.index', compact('samples'));
+        return view('sample.index', compact('samples'));
     }
 
     
     public function create()
     {
-        return view('samples.create');
+        return view('sample.create');
     }
 
     
@@ -37,21 +39,21 @@ class SampleController extends Controller
 
         Sample::create($request->all());
 
-        return redirect()->route('samples.index');
+        return redirect()->route('sample.index');
     }
 
     
     public function show($id)
     {
         $sample = Sample::find($id);
-        return view('samples.show', compact('sample'));
+        return view('sample.show', compact('sample'));
     }
 
     
     public function edit($id)
     {
         $sample = Sample::find($id);
-        return view('samples.edit', compact('sample'));
+        return view('sample.edit', compact('sample'));
     }
 
     

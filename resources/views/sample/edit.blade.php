@@ -21,7 +21,7 @@
 
     @endif
 
-    <form method="post" action="{{ url('samples/'. $samples->id) }}" enctype="multipart/form-data" >
+    <form method="post" action="{{ url('samples/'. $sample->id) }}" enctype="multipart/form-data" >
         @method('PATCH')
         @csrf
 
@@ -29,14 +29,14 @@
         <div class="form-group mb-3">
 
             <label for="title">Titre:</label>
-            <input type="text" class="form-control" id="title" placeholder="Entrer titre" name="title" value="{{ $samples->titre }}">
+            <input type="text" class="form-control" id="title" placeholder="Entrer titre" name="title" value="{{ $sample->titre }}">
 
         </div>
 
         <div class="form-group mb-3">
 
             <label for="content">Ajouter le contenu:</label>
-            <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{ $samples->content }}</textarea>
+            <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{ $sample->content }}</textarea>
 
         </div>
 

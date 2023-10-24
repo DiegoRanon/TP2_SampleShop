@@ -10,7 +10,7 @@
         </div>
 
         <div class="col-lg-2">
-            <a class="btn btn-success" href="{{ url('samples/create') }}">Ajouter un sample</a>
+            <a class="btn btn-success" href="{{ url('sample/create') }}">Ajouter un sample</a>
         </div>
 
     </div>
@@ -32,7 +32,7 @@
         @foreach ($samples as $index => $sample)
         <div class="col-md-4">
             <div class="card card-body">
-                <a href="{{ url('samples/'. $samples->id) }}">
+                <a href="{{ url('sample/'. $sample->id) }}">
                 <h2>
                         {{ $sample->title }}
                     </h2>
@@ -42,7 +42,7 @@
                
 
           
-            <a href="{{ url('samples/'. $samples->id) }}" class="btn btn-outline-primary">En savoir plus</a>
+            <a href="{{ url('sample/'. $sample->id) }}" class="btn btn-outline-primary">En savoir plus</a>
             </div>
         </div>
         @endforeach

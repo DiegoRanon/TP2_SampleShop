@@ -11,8 +11,8 @@
             <p class="lead">{{ $samples->content }}</p>
 
             <div class="buttons">
-                <a href="{{ url('samples/'. $samples->id .'/edit') }}" class="btn btn-info">Modifier</a>
-                <form action="{{ url('samples/'. $samples->id) }}" method="POST" style="display: inline">
+                <a href="{{ url('sample/'. $sample->id .'/edit') }}" class="btn btn-info">Modifier</a>
+                <form action="{{ url('sample/'. $sample->id) }}" method="POST" style="display: inline">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Supprimer</button>
